@@ -1,2 +1,6 @@
 To @ explore strange new worlds,
-To seek out new life and new civilizations?
+To seek out new life and new civilizations? 
+What's your job?
+What are you doing?
+What do you do?
+Design a variety of possible input data for each function that operates on a directed graph. The amount of input data is not limited, and the adequacy of the test procedure is the criterion

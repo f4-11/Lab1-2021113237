@@ -11,7 +11,7 @@ if __name__ == "__main__":
     print(g.get_nodes())
     print(g.get_edges())
     print(g.get_weights())
-    print()
+    # print(g._graph__read_file('./test.txt'))
 
     g.draw_graph()  # 绘制图形 —— 需求2
 
