@@ -35,7 +35,7 @@ class graph:
     def get_weights(self):
         return self.__weights.copy()
 
-    def draw_graph(self):
+    def showDirectedGraph(self):
         G = nx.DiGraph()
         G.add_nodes_from(self.__nodes)
         for node in self.__nodes:
@@ -56,7 +56,7 @@ class graph:
         # 显示图形
         plt.show()
 
-    def get_bridge_words(self, word1, word2):
+    def queryBridgeWords(self, word1, word2):
         word1 = word1.lower()
         word2 = word2.lower()
         if word1 not in self.__nodes or word2 not in self.__nodes:
@@ -85,7 +85,7 @@ class graph:
         return res
 
 
-    def make_sentence(self, sentence):
+    def generateNewText(self, sentence):
         words = sentence.split()  # 假设输入的句子是合法的
         # 小写
         for i in range(len(words)):
@@ -94,13 +94,13 @@ class graph:
         for i in range(len(words) - 1):
             res.append(words[i])
             if words[i] in self.__nodes and words[i + 1] in self.__nodes:
-                bridge_words = self.get_bridge_words(words[i], words[i + 1])
+                bridge_words = self.queryBridgeWords(words[i], words[i + 1])
                 if bridge_words is not None:
                     res.append(bridge_words[0])
         res.append(words[-1])
         return ' '.join(res)
 
-    def get_shortest_path(self, word1, word2):
+    def calcShortestPath(self, word1, word2):
         word1 = word1.lower()
         word2 = word2.lower()
         # 广度优先搜索
@@ -136,7 +136,7 @@ class graph:
         print(" -> ".join(path[word2]))
         return distence[word2], path[word2]
 
-    def print_get_shortest_path(self,shortest_path):
+    def print_calcShortestPath(self,shortest_path):
         shortest_path=shortest_path[1]
         # 绘制图形
         G = nx.DiGraph()
@@ -158,7 +158,7 @@ class graph:
         plt.show()
 
 
-    def wander(self, word):
+    def randomWalk(self, word):
         word = word.lower()
         if word not in self.__nodes:
             print("No such word in the graph!")
