@@ -211,3 +211,4 @@ class graph:
             self.__weights[(word_from, word_to)] = 1
         else:
             self.__weights[(word_from, word_to)] += 1
+111
